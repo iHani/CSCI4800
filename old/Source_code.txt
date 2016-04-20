@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+
+<HEAD>
+	<TITLE>CSCI 3415 - Homework #1 - JavaScript</TITLE>
+</HEAD>
+
+<BODY>
+	<center>
+	<div style="text-align: left; padding: 50px; max-width: 700px;">
+		<h1>CSCI 3415 - Homework #1 - JavaScript</h1>
+		<p>Write a Javascript to input a sequence of integers, compute the average of the sequence, and return a count of the number of elements in the sequence that are larger than the average.
+		<div style="background-color: #f6f6f6; padding: 2px 15px 15px 15px">
+			<p>Enter numbers separated by a space: <input type="text" id="numbers" onkeydown="if (event.keyCode == 13) document.getElementById('compute').click()" autofocus>
+			<button id="compute" onclick="compute()">Compute</button>
+
+			<p id="result" style=""></p>
+
+			<script>
+					function compute(){
+					var entries = document.getElementById("numbers").value;
+					var res = entries.split(" "); // converting the entry to an array of strings
+					var arrayLength = res.length;
+
+					// Check if the last character is a whitespace then remove it
+					//if(res[arrayLength - 1] == " ") { str = str.substring(0, str.length - 1); }
+
+					// Converting the array "res" type from string to int
+					for (var i = 0; i < arrayLength; i++){
+						res[i] = parseInt(res[i], 10);
+					}
+
+					// counting the sum of the array
+					var sum = 0;
+					for (i = 0; i < arrayLength; i++){
+						sum = sum + res[i];
+					}
+					var average = sum / arrayLength;
+
+					// counting elements larger than the average
+					var larger = 0;
+					for (i = 0; i < arrayLength; i++){
+						if (res[i] > average)
+								larger++;
+					}
+
+					document.getElementById("result").innerHTML = "<h3>Result</h3>The average is: " + average + "</br>Numbers larger than the average: " + larger;
+					
+					}
+			</script>
+		</div>
+		<div style="text-align: left; padding: 10px; max-width: 700px;">
+			<a href="source_code.txt">Source_code.txt</a><br>
+			<a href="Write_up.pdf">Write_up.pdf</a>
+			<p>9/2/2015</br>
+			Hani Alghamdi
+		</div>
+	</center>
+</BODY>
+</HTML>

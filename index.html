@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/4800/style.css">
+</head>
+<body>
+
+
+<div class="content">
+
+<h2>Welcome to sentence generator!</h2>
+<p>CSCI 4800 project - Spring 2016</p>
+    <br>
+    <p>Lorim epsum here a little description about the project</p>
+    <br>
+    <div class="form-group">
+        <label for="speach">Paste the speach below then hit "Generate!":</label>
+        <textarea class="form-control" rows="5" id="speach" autofocus></textarea>
+    </div>
+
+
+    <div align="center"><button id="GenerateButton" class="btn btn-primary" type="button" onclick="generate()">
+        Generate!
+    </button></div>
+
+    <h3 id="GeneratedSentence">
+        Who's gonna pay for the wall?
+    </h3>
+    <br>
+    <h4 id="patternDiscovered">* Discovered pattern:<br> < noun > < adj > < adj > < verb > < noun >< verb >   </h4>
+</div>
+
+<script>
+    function generate(){
+        var speach = document.getElementById("speach").value;
+        var dots = count(speach,'\\.');
+
+        document.getElementById("GeneratedSentence").innerHTML = "Total number of dots found: " + dots;
+    }
+
+    function count(thespeach, letter) {
+        return ( thespeach.match( RegExp(letter,'g') ) || [] ).length;
+    }
+
+
+
+    var str = "Hello world, welcome to the universe.";
+    var n = str.indexOf("welcome");
+
+
+    substr(start, [length])
+
+
+
+    for (i = 0; i < arrayLength; i++){
+        sum = sum + res[i];
+    }
+
+
+</script>
+
+</body>
+<p align="centeR"><strong>By: Oliver Batista - Hani Alghamdi</strong></p>
+<p align="centeR"><a href=#">Source code</a> - <a href=#">Project repoort.pdf</a></p>
+<footer align="center">4/19/2016</footer>
+
+</html>
